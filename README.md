@@ -9,6 +9,8 @@ The tool is designed to run in the background and continuously check the status 
 - Configurable notification interval and timeout duration.
 - Supports custom priority and tags for notifications.
 
+![example](assets/img/ntfy.png)
+
 ### Usage
 
 ```
@@ -32,4 +34,24 @@ OPTIONS:
 
 ```bash
 ping-monitor --topic myNtfyTopic --ip 10.0.0.1 10.0.0.2 10.0.0.3
+```
+
+### Installation
+
+```bash
+# Build and run (from scratch)
+git clone git@github.com:juhnny5/ping-monitor.git
+cd ping-monitor/
+cargo build --release
+sudo cp target/release/ping-monitor /usr/local/bin
+sudo chmod +x /usr/local/bin/ping-monitor
+
+
+# Copy service and add default values
+cp service/ping-monitor.service /etc/systemd/system/
+echo 'ARGS="--topic myNtfyTopic --ip 10.0.0.1 10.0.0.2 10.0.0.3"' > /etc/default/ping-monitor
+
+systemctl daemon-reload
+systemctl enable ping-monitor.service
+systemctl start ping-monitor.service
 ```
