@@ -1,4 +1,4 @@
-# Ping Monitor Script
+# Ping Monitor
 
 This Bash script monitors the availability of a list of target IP addresses and sends notifications to a specified topic using the ntfy.sh service.
 
