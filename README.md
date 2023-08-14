@@ -1,8 +1,8 @@
 # Ping Monitor
 
-This Bash script monitors the availability of a list of target IP addresses and sends notifications to a specified topic using the ntfy.sh service.
+This Rust tool monitors the availability of a list of target IP addresses and sends notifications to a specified topic using the ntfy.sh service.
 
-The script is designed to run in the background and continuously check the status of the target IPs. It provides the following features:
+The tool is designed to run in the background and continuously check the status of the target IPs. It provides the following features:
 
 - Monitors multiple target IP addresses for their availability.
 - Sends notifications when a target IP becomes unreachable or recovers.
