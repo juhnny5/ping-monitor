@@ -1,0 +1,13 @@
+[Unit]
+Description=Ping Monitoring Service
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/ping-monitor
+ExecStart=/usr/local/bin/ping-monitor $ARGS
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
